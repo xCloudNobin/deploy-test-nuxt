@@ -1,0 +1,34 @@
+{
+  "name": "deploy-test-nuxt",
+  "version": "1.0.0",
+  "description": "Nuxt 3 SSR taskboard fixture: SQLite persistence, validated CRUD/search/filter, server-side reads + client hydration, liveness/readiness, release marker, scripts/verify.sh.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "bash scripts/build.sh",
+    "build:app": "nuxt build",
+    "prepare": "nuxt prepare",
+    "start": "node .output/server/index.mjs",
+    "typecheck": "nuxt typecheck",
+    "smoke": "bash scripts/smoke.sh",
+    "browser-smoke": "node scripts/browser-smoke.js",
+    "verify": "bash scripts/verify.sh"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "nuxt": "^3.21.11",
+    "vue": "^3.5.17"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.20.4",
+    "playwright-core": "^1.62.1",
+    "typescript": "^5.8.3",
+    "vue-tsc": "^3.3.11"
+  }
+}
